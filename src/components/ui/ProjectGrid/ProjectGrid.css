@@ -1,0 +1,131 @@
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.project-card {
+  aspect-ratio: 1.618/1;
+  position: relative;
+}
+
+.rhombus-container {
+  position: absolute;
+  inset: 0;
+  transform: skew(-12deg);
+  border: 1px solid rgba(0, 255, 242, 0.5);
+  background: black;
+  overflow: hidden;
+}
+
+.rhombus-content {
+  transform: skew(12deg);
+  height: 100%;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.project-title {
+  color: #00fff2;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-shadow: 
+    2px 2px #ff003c,
+    -2px -2px #0ff;
+}
+
+.time-info {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  text-align: right;
+}
+
+.time-label {
+  color: #00fff2;
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+.time-value {
+  color: #ffef00;
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+.hover-state {
+  position: absolute;
+  inset: 0;
+}
+
+.image-container {
+  position: absolute;
+  inset: 0;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, black, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.hover-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.project-description {
+  color: #00fff2;
+  font-family: monospace;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+}
+
+.explore-prompt {
+  color: #ffef00;
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+.scan-lines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #ff003c, -2px -2px #0ff; }
+  25% { text-shadow: -2px 2px #ff003c, 2px -2px #0ff; }
+  50% { text-shadow: 2px -2px #ff003c, -2px 2px #0ff; }
+  75% { text-shadow: -2px -2px #ff003c, 2px 2px #0ff; }
+  100% { text-shadow: 2px 2px #ff003c, -2px -2px #0ff; }
+}
+
+.project-title:hover {
+  animation: glitch 500ms infinite;
+}
